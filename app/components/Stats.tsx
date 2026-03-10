@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-export default function DescriptionRotator() {
-  const descriptions = [
-    "I'm a Web developer building clean, responsive, high-performance applications. I use React and Next.js, turning designs into scalable code. With 4 years experience of delivering scalable solutions at a young age.",
-    "I craft modern, efficient web applications that scale seamlessly. Skilled in React and Next.js, I turn concepts into maintainable code. Delivering robust solutions with four years of hands-on experience.",
-    "Passionate about building fast, user-friendly web applications. I leverage React and Next.js to transform designs into reliable, scalable code. Four years of experience delivering impactful solutions at a young age."
-  ];
+const descriptions = [
+  "I'm a Web developer building clean, responsive, high-performance applications. I use React and Next.js, turning designs into scalable code. With 4 years experience of delivering scalable solutions at a young age.",
+  "I craft modern, efficient web applications that scale seamlessly. Skilled in React and Next.js, I turn concepts into maintainable code. Delivering robust solutions with four years of hands-on experience.",
+  "Passionate about building fast, user-friendly web applications. I leverage React and Next.js to transform designs into reliable, scalable code. Four years of experience delivering impactful solutions at a young age."
+];
 
+export default function DescriptionRotator() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

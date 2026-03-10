@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from "react";
+import Image from "next/image";
 
 const Body = () => {
   return (
@@ -180,11 +180,14 @@ const Body = () => {
             <div className="hover-3d cursor-none rounded-xl border-none  flex-1 w-full max-w-xl  mt-6 animate-fade-up border border-border">
               <div className="card rounded-xl">
                 <figure className=" rounded-xl ">
-                  <img
+                  <Image
                     src="https://cdn.dribbble.com/userupload/9602981/file/original-e6f9ef9e2c570d0d612b1775155a4d63.png"
-                    alt="Next.Js" />
-
-                  
+                    alt="Next.js project preview"
+                    width={1200}
+                    height={675}
+                    className="h-auto w-full rounded-xl"
+                    unoptimized
+                  />
 
                 </figure>
                 <div className="card-body">

@@ -200,11 +200,13 @@ export default function Profile() {
                 </span>
               </a>
 
-              <img
+              <Image
                 src="https://ghchart.rshah.org/7c3aed/ThandululoNengovhela"
                 alt="GitHub Contribution Graph"
+                width={720}
+                height={100}
                 className="mt-4 w-full rounded-lg "
-                loading="lazy"
+                unoptimized
               />
             </div>
 
