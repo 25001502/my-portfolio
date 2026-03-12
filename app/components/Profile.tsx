@@ -189,7 +189,7 @@ export default function Profile() {
           <div className="flex-1 w-full max-w-xl animate-right">
             <div className="rounded-xl cursor-none border w-full border-border  bg-card/30 p-4 animate-pulse  animate-fade-up bg-[radial-gradient(circle_at_bottom_left,#ffffff04_35%,transparent_36%),radial-gradient(circle_at_top_right,#ffffff04_35%,transparent_36%)] bg-size-[4.95em_4.95em]">
               <a
-                href="https://github.com/ThandululoNengovhela"
+                href="https://github.com/25001502"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold block cursor-none"
@@ -201,7 +201,7 @@ export default function Profile() {
               </a>
 
               <Image
-                src="https://ghchart.rshah.org/7c3aed/ThandululoNengovhela"
+                src="https://ghchart.rshah.org/7c3aed/25001502"
                 alt="GitHub Contribution Graph"
                 width={720}
                 height={100}
