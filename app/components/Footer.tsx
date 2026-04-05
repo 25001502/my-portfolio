@@ -122,7 +122,7 @@ const Footer = () => {
       </footer>
       <div className="footer sm:footer-horizontal  border-t-gray-800 border border-black text-neutral-content p-4">
         <span className="text-sm text-gray-600 font-medium ">
-          © 2026 Nengovhela. Made within South Africa
+          © 2026 THANDULULOTECHNOLOGIES
         </span>
       </div>
     </section>
