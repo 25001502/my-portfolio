@@ -15,27 +15,28 @@ export default function Header() {
             <li>
               <a></a>
               <ul className="p-2 ">
-                <li><a>Projects</a></li>
-                <li><a>Demos</a></li>
+                <li><a className="rounded-xl">Projects</a></li>
+                <li><a className="rounded-xl">Demos</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" className="rounded-xl">Contact</a></li>
           </ul>
         </div>
-        <a href="#profile" className="btn btn-ghost text-base font-bold cursor-none">Thandululo Nengovhela</a>    </div>
+        <a href="#profile" className="btn btn-ghost text-base font-bold cursor-none rounded-xl">Thandululo Nengovhela</a>  
+      </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li><a href="#body" className="cursor-none">About</a></li>
+          <li><a href="#body" className="cursor-none rounded-xl">About</a></li>
           <li>
             <details>
-              <summary className="cursor-none">Content</summary>
+              <summary className="cursor-none rounded-xl">Content</summary>
               <ul className="p-2 bg-black rounded-xl border border-white/10 w-40 z-1">
-                <li><a className="cursor-none rounded-xl">Projects</a></li>
+                <li><a className="cursor-none rounded-xl ">Projects</a></li>
                 <li><a className="cursor-none rounded-xl">Demos</a></li>
               </ul>
             </details>
           </li>
-          <li><a href="#contact" className="cursor-none">Contact</a></li>
+          <li><a href="#contact" className="cursor-none rounded-xl">Contact</a></li>
         </ul>
       </div>
       <div className="navbar-end">
