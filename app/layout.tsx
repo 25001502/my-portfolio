@@ -17,13 +17,20 @@ export default function RootLayout({
 }) {
   return (
     <html data-theme="black" lang="en" className="">
-      <body>
+      <head>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-3715807718346094"
+        />
         <Script
+          id="adsense-init"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3715807718346094"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
+      </head>
+      <body>
         {children}
       </body>
     </html>
