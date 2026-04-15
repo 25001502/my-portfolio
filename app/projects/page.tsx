@@ -37,7 +37,7 @@ export default function ProjectsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card bg-base-100 w-96 shadow-sm">
+          <div className="card bg-transparent w-96 shadow-sm">
             <figure>
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/ChatGPT%20Image%20Feb%2016%2C%202026%2C%2010_40_33%20AM.png?alt=media&token=99a62911-665e-4997-94cb-46f47f56d17e"
@@ -61,11 +61,12 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-        <div className="card bg-base-100 w-96 shadow-sm">
+        <div className="card bg-transparent w-96 shadow-sm">
             <figure>
               <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/aps.gradiate.png?alt=media&token=e0331c1f-aa63-4e63-a2fe-c2b30ee90ccd"
                 alt="Shoes"
+                className="h-52 w-full object-cover"
               />
             </figure>
             <div className="card-body">
