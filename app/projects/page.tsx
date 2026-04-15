@@ -1,17 +1,6 @@
 import Link from "next/link";
 
-const projects = [
-  {
-    name: "APS Gradiate",
-    url: "https://aps.gradiate.co.za",
-    description: "Application platform for Gradiate services and internal workflows.",
-  },
-  {
-    name: "Gradiate",
-    url: "https://gradiate.co.za",
-    description: "Primary Gradiate website for showcasing services and brand presence.",
-  },
-];
+
 
 export default function ProjectsPage() {
   return (
