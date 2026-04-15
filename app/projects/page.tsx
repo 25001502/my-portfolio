@@ -26,13 +26,13 @@ export default function ProjectsPage() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
           <div className="card mx-auto w-full max-w-md bg-transparent shadow-sm md:max-w-none">
-            <figure className="overflow-hidden rounded-2xl">
+            <figure >
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/ChatGPT%20Image%20Feb%2016%2C%202026%2C%2010_40_33%20AM.png?alt=media&token=99a62911-665e-4997-94cb-46f47f56d17e"
                 alt="Gradiate project preview"
                 width={1200}
                 height={675}
-                className="h-44 w-full object-cover sm:h-52"
+                className="h-57 w-full object-cover "
               />
             </figure>
             <div className="card-body p-4 sm:p-6">
