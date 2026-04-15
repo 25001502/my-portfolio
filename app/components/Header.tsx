@@ -1,11 +1,13 @@
 
 
+import Link from "next/link";
+
 export default function Header() {
   return (
     <div data-theme="black" className="navbar  transition-all duration-300 bg-background/95 backdrop-blur-sm border-b border-borde shadow-sm sticky top-0 left-0 w-full z-50   border-white/10">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" title="Open navigation menu" aria-label="Open navigation menu" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
           </div>
           <ul
@@ -13,9 +15,9 @@ export default function Header() {
             className="menu menu-sm dropdown-content bg-black rounded-box z-1 mt-3 w-30 p-2 shadow rounded-xl border border-white/10">
             <li><a href="#body">About</a></li>
             <li>
-              <a></a>
+              <a>Content</a>
               <ul className="p-2 ">
-                <li><a className="rounded-xl">Projects</a></li>
+                <li><Link href="/projects" className="rounded-xl">Projects</Link></li>
                 <li><a className="rounded-xl">Demos</a></li>
               </ul>
             </li>
@@ -31,7 +33,7 @@ export default function Header() {
             <details>
               <summary className="cursor-none rounded-xl">Content</summary>
               <ul className="p-2 bg-black rounded-xl border border-white/10 w-40 z-1">
-                <li><a className="cursor-none rounded-xl ">Projects</a></li>
+                <li><Link href="/projects" className="cursor-none rounded-xl">Projects</Link></li>
                 <li><a className="cursor-none rounded-xl">Demos</a></li>
               </ul>
             </details>
