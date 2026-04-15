@@ -41,8 +41,8 @@ export default function ProjectsPage() {
                 <div className="badge badge-secondary">NEW</div>
               </h2>
               <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
+                Helping students discover universities, courses, and opportunities that match their future.
+                
               </p>
               <div className="card-actions justify-stretch sm:justify-end">
                 <a
@@ -87,8 +87,8 @@ export default function ProjectsPage() {
                 <div className="badge badge-secondary">NEW</div>
               </h2>
               <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
+                Quickly calculate your APS score and understand where you stand.
+                Simple, fast.
               </p>
               <div className="card-actions justify-stretch sm:justify-end">
                 <a
