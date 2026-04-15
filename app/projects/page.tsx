@@ -55,13 +55,33 @@ export default function ProjectsPage() {
                 there are title and actions parts
               </p>
               <div className="card-actions justify-end">
-                <div className="badge badge-outline">Fashion</div>
-                <div className="badge badge-outline">Products</div>
+                <a
+                  href="https://gradiate.co.za"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-soft  rounded-xl"
+                >
+                  Visit{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H18m0 0v4.5M18 6l-7.5 7.5M15 13.5v4.125c0 .621-.504 1.125-1.125 1.125H6.375A1.125 1.125 0 0 1 5.25 17.625V10.125C5.25 9.504 5.754 9 6.375 9H10.5"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
 
-        <div className="card bg-transparent w-96 shadow-sm">
+          <div className="card bg-transparent w-96 shadow-sm">
             <figure>
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/aps.gradiate.png?alt=media&token=e0331c1f-aa63-4e63-a2fe-c2b30ee90ccd"
@@ -79,12 +99,31 @@ export default function ProjectsPage() {
                 there are title and actions parts
               </p>
               <div className="card-actions justify-end">
-                <div className="badge badge-outline">Fashion</div>
-                <div className="badge badge-outline">Products</div>
+                <a
+                  href="https://aps.gradiate.co.za"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-soft  rounded-xl"
+                >
+                  Visit{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H18m0 0v4.5M18 6l-7.5 7.5M15 13.5v4.125c0 .621-.504 1.125-1.125 1.125H6.375A1.125 1.125 0 0 1 5.25 17.625V10.125C5.25 9.504 5.754 9 6.375 9H10.5"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
-        </div>
-
+          </div>
         </div>
       </div>
     </section>
