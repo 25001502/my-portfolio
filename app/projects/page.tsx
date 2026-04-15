@@ -1,54 +1,55 @@
 import Link from "next/link";
-
-
+import Image from "next/image";
 
 export default function ProjectsPage() {
   return (
     <section
       data-theme="black"
-      className="min-h-screen py-20 bg-[radial-gradient(circle_at_top_left,#ffffff08_30%,transparent_31%),radial-gradient(circle_at_bottom_right,#ffffff08_30%,transparent_31%)] bg-size-[6em_6em]"
+      className="min-h-screen py-12 sm:py-16 md:py-20 bg-[radial-gradient(circle_at_top_left,#ffffff08_30%,transparent_31%),radial-gradient(circle_at_bottom_right,#ffffff08_30%,transparent_31%)] bg-size-[6em_6em]"
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-12">
-        <div className="mb-10 flex items-center justify-between gap-4">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 md:px-12">
+        <div className="mb-8 flex flex-col items-start gap-4 sm:mb-10 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-medium mb-2 text-indigo-600">Projects</p>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
+            <p className="mb-2 text-xs font-medium text-indigo-600 sm:text-sm">Projects</p>
+            <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
               Live Websites
             </h1>
           </div>
 
           <Link
             href="/"
-            className="rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-white hover:bg-white/5"
+            className="w-full rounded-xl border border-white/15 px-4 py-2 text-center text-sm font-medium text-white hover:bg-white/5 sm:w-auto"
           >
             Back Home
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card bg-transparent w-96 shadow-sm">
-            <figure>
-              <img
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <div className="card mx-auto w-full max-w-md bg-transparent shadow-sm md:max-w-none">
+            <figure className="overflow-hidden rounded-2xl">
+              <Image
                 src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/ChatGPT%20Image%20Feb%2016%2C%202026%2C%2010_40_33%20AM.png?alt=media&token=99a62911-665e-4997-94cb-46f47f56d17e"
-                alt="Shoes"
-                className="h-52 w-full object-cover"
+                alt="Gradiate project preview"
+                width={1200}
+                height={675}
+                className="h-44 w-full object-cover sm:h-52"
               />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">
+            <div className="card-body p-4 sm:p-6">
+              <h2 className="card-title flex flex-wrap items-center gap-2 text-lg sm:text-xl">
                 GRADIATE
                 <div className="badge badge-secondary">NEW</div>
               </h2>
-              <p>
+              <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
                 A card component has a figure, a body part, and inside body
                 there are title and actions parts
               </p>
-              <div className="card-actions justify-end">
+              <div className="card-actions justify-stretch sm:justify-end">
                 <a
                   href="https://gradiate.co.za"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-soft  rounded-xl"
+                  className="btn btn-soft w-full justify-center rounded-xl sm:w-auto"
                 >
                   Visit{" "}
                   <svg
@@ -70,29 +71,31 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          <div className="card bg-transparent w-96 shadow-sm">
-            <figure>
-              <img
+          <div className="card mx-auto w-full max-w-md bg-transparent shadow-sm md:max-w-none">
+            <figure className="overflow-hidden rounded-2xl">
+              <Image
                 src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/aps.gradiate.png?alt=media&token=e0331c1f-aa63-4e63-a2fe-c2b30ee90ccd"
-                alt="Shoes"
-                className="h-52 w-full object-cover"
+                alt="APS Gradiate project preview"
+                width={1200}
+                height={675}
+                className="h-44 w-full object-cover sm:h-52"
               />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">
+            <div className="card-body p-4 sm:p-6">
+              <h2 className="card-title flex flex-wrap items-center gap-2 text-lg sm:text-xl">
                 APS Calculator
                 <div className="badge badge-secondary">NEW</div>
               </h2>
-              <p>
+              <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
                 A card component has a figure, a body part, and inside body
                 there are title and actions parts
               </p>
-              <div className="card-actions justify-end">
+              <div className="card-actions justify-stretch sm:justify-end">
                 <a
                   href="https://aps.gradiate.co.za"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-soft  rounded-xl"
+                  className="btn btn-soft w-full justify-center rounded-xl sm:w-auto"
                 >
                   Visit{" "}
                   <svg
