@@ -42,6 +42,7 @@ export default function ProjectsPage() {
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/ChatGPT%20Image%20Feb%2016%2C%202026%2C%2010_40_33%20AM.png?alt=media&token=99a62911-665e-4997-94cb-46f47f56d17e"
                 alt="Shoes"
+                className="h-52 w-full object-cover"
               />
             </figure>
             <div className="card-body">
