@@ -10,77 +10,61 @@ import {
   FiTerminal,
 } from "react-icons/fi";
 import { HiSparkles } from "react-icons/hi2";
+import { demos as demoRegistry } from "./registry";
 
 type DemoItem = {
+  slug: string;
   title: string;
-  description: string;
-  href: string;
   icon: IconType;
   iconWrapperClassName: string;
 };
 
-const demos: DemoItem[] = [
+const demoCards: DemoItem[] = [
   {
+    slug: "payment-integration",
     title: "Payment Integration",
-    description:
-      "Demo payment flow with Paystack. Test card processing, subscriptions, and checkout experiences.",
-    href: "#",
     icon: FiCreditCard,
     iconWrapperClassName: "bg-emerald-500/20 text-emerald-300",
   },
   {
+    slug: "ai-chat-assistant",
     title: "AI Chat Assistant",
-    description:
-      "Conversational AI powered by DeepSeek. Experience real-time AI responses and contextual understanding.",
-    href: "#",
     icon: FiMessageSquare,
     iconWrapperClassName: "bg-sky-500/20 text-sky-300",
   },
   {
+    slug: "tic-tac-toe",
     title: "Tic Tac Toe",
-    description:
-      "Classic game with a twist. Play against an AI opponent with adjustable difficulty levels.",
-    href: "#",
     icon: FiGrid,
     iconWrapperClassName: "bg-fuchsia-500/20 text-fuchsia-300",
   },
   {
+    slug: "experience-3d",
     title: "3D Experience",
-    description:
-      "Interactive 3D visualization built with Three.js. Explore immersive WebGL graphics.",
-    href: "#",
     icon: FiBox,
     iconWrapperClassName: "bg-orange-500/20 text-orange-300",
   },
   {
+    slug: "particle-effects",
     title: "Particle Effects",
-    description:
-      "Canvas-based particle system with physics. Interactive mouse-following animations.",
-    href: "#",
     icon: HiSparkles,
     iconWrapperClassName: "bg-amber-500/20 text-amber-300",
   },
   {
+    slug: "audio-visualizer",
     title: "Audio Visualizer",
-    description:
-      "Real-time audio visualization using Web Audio API. See your music come alive.",
-    href: "#",
     icon: FiMusic,
     iconWrapperClassName: "bg-rose-500/20 text-rose-300",
   },
   {
+    slug: "qr-code-generator",
     title: "QR Code Generator",
-    description:
-      "Generate custom QR codes with styling options. Download as PNG or SVG.",
-    href: "#",
     icon: HiSparkles,
     iconWrapperClassName: "bg-violet-500/20 text-violet-300",
   },
   {
+    slug: "terminal-emulator",
     title: "Terminal Emulator",
-    description:
-      "Interactive terminal experience in the browser. Execute predefined commands.",
-    href: "#",
     icon: FiTerminal,
     iconWrapperClassName: "bg-slate-500/20 text-slate-300",
   },
@@ -115,23 +99,28 @@ export default function DemosPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {demos.map((demo) => {
-            const Icon = demo.icon;
+          {demoCards.map((demoMeta) => {
+            const config = demoRegistry.find((entry) => entry.slug === demoMeta.slug);
+            if (!config) {
+              return null;
+            }
+
+            const Icon = demoMeta.icon;
 
             return (
               <article
-                key={demo.title}
+                key={config.slug}
                 className="rounded-3xl border border-white/10 bg-black/45 p-6 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-black/60"
               >
                 <div
-                  className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${demo.iconWrapperClassName}`}
+                  className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${demoMeta.iconWrapperClassName}`}
                 >
                   <Icon className="h-7 w-7" />
                 </div>
 
-                <h2 className="mb-3 text-2xl font-semibold leading-tight text-white">{demo.title}</h2>
+                <h2 className="mb-3 text-2xl font-semibold leading-tight text-white">{config.title}</h2>
 
-                <p className="min-h-[110px] text-base leading-relaxed text-gray-400">{demo.description}</p>
+                <p className="min-h-[110px] text-base leading-relaxed text-gray-400">{config.description}</p>
 
                 <div className="my-5 h-px bg-linear-to-r from-white/20 via-white/10 to-transparent" />
 
@@ -142,7 +131,7 @@ export default function DemosPage() {
                   </span>
 
                   <Link
-                    href={demo.href}
+                    href={`/demos/${config.slug}`}
                     className="inline-flex items-center gap-2 text-lg font-medium text-white/80 transition hover:text-white"
                   >
                     Try it
