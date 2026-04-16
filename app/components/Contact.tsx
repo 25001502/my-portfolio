@@ -36,6 +36,36 @@ const Contact = () => {
                 </div>
               </div>
 
+
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+                {" "}
+                <i className="fa-brands fa-linkedin text-xl text-indigo-500"></i>{" "}
+                <div className="">
+                  <p className=" text-gray-500 text-xs ">LinkedIn</p>
+                  <a
+                    className="text-white font-medium cursor-none"
+                    href="https://www.linkedin.com/in/nengovhela-thandululo-880080367"
+                  >
+                    Thandululo Nengovhela
+                  </a>
+                </div>
+              </div>
+
+
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+                {" "}
+                <i className="fa-brands fa-github text-xl text-indigo-500"></i>{" "}
+                <div className="">
+                  <p className=" text-gray-500 text-xs ">GitHub</p>
+                  <a
+                    className="text-white font-medium cursor-none"
+                    href="https://github.com/25001502"
+                  >
+                    Thandululo N.
+                  </a>
+                </div>
+              </div>
+
               <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
                 {" "}
                 <i className="fa-solid fa-phone text-xl text-indigo-500"></i>{" "}
