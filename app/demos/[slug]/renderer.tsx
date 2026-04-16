@@ -300,6 +300,7 @@ function findCriticalMove(board: Cell[], mark: "X" | "O") {
 function TicTacToeDemo() {
   const [board, setBoard] = useState<Cell[]>(Array(9).fill(null));
   const [isThinking, setIsThinking] = useState(false);
+  const aiMoveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { difficulty, setDifficulty, config } = useDifficulty("medium");
   const { stats, recordWin, recordLoss, recordDraw, reset: resetStats } = useGameStats(
     "tic-tac-toe-stats"
@@ -310,14 +311,12 @@ function TicTacToeDemo() {
   const isLocked = Boolean(winner) || isDraw || isThinking;
 
   useEffect(() => {
-    if (winner === "X") {
-      recordWin();
-    } else if (winner === "O") {
-      recordLoss();
-    } else if (isDraw) {
-      recordDraw();
-    }
-  }, [winner, isDraw, recordWin, recordLoss, recordDraw]);
+    return () => {
+      if (aiMoveTimeoutRef.current) {
+        clearTimeout(aiMoveTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const makeAiMove = (nextBoard: Cell[]) => {
     const winningMove = findCriticalMove(nextBoard, "O");
@@ -349,9 +348,17 @@ function TicTacToeDemo() {
       const updated = [...nextBoard];
       updated[move] = "O";
       setBoard(updated);
+
+      const aiWinner = getWinner(updated);
+      if (aiWinner === "O") {
+        recordLoss();
+      } else if (updated.every((cell) => cell !== null)) {
+        recordDraw();
+      }
     }
 
     setIsThinking(false);
+    aiMoveTimeoutRef.current = null;
   };
 
   const onCellClick = (index: number) => {
@@ -363,12 +370,19 @@ function TicTacToeDemo() {
     nextBoard[index] = "X";
     setBoard(nextBoard);
 
-    if (getWinner(nextBoard) || nextBoard.every((cell) => cell !== null)) {
+    const playerWinner = getWinner(nextBoard);
+    if (playerWinner === "X") {
+      recordWin();
+      return;
+    }
+
+    if (nextBoard.every((cell) => cell !== null)) {
+      recordDraw();
       return;
     }
 
     setIsThinking(true);
-    setTimeout(() => makeAiMove(nextBoard), config.moveDelay);
+    aiMoveTimeoutRef.current = setTimeout(() => makeAiMove(nextBoard), config.moveDelay);
   };
 
   const status = winner
@@ -388,8 +402,11 @@ function TicTacToeDemo() {
 
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         <div>
-          <label className="text-xs font-medium text-gray-400">Difficulty</label>
+          <label htmlFor="tic-tac-toe-difficulty" className="text-xs font-medium text-gray-400">
+            Difficulty
+          </label>
           <select
+            id="tic-tac-toe-difficulty"
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value as "easy" | "medium" | "hard")}
             className="mt-1 w-full rounded-lg border border-white/10 bg-black/60 px-3 py-2 text-sm text-white"
@@ -436,6 +453,10 @@ function TicTacToeDemo() {
         )}
         <button
           onClick={() => {
+            if (aiMoveTimeoutRef.current) {
+              clearTimeout(aiMoveTimeoutRef.current);
+              aiMoveTimeoutRef.current = null;
+            }
             setBoard(Array(9).fill(null));
             setIsThinking(false);
           }}
@@ -445,6 +466,10 @@ function TicTacToeDemo() {
         </button>
         <button
           onClick={() => {
+            if (aiMoveTimeoutRef.current) {
+              clearTimeout(aiMoveTimeoutRef.current);
+              aiMoveTimeoutRef.current = null;
+            }
             setBoard(Array(9).fill(null));
             setIsThinking(false);
             resetStats();
@@ -727,13 +752,15 @@ function QrGeneratorDemo() {
   const [fg, setFg] = useState("000000");
   const [bg, setBg] = useState("ffffff");
 
-  const applyPreset = (presetName: string) => {
-    const preset = qrPresets[presetName as keyof typeof qrPresets];
-    if (preset) {
-      setText(preset.template);
-      setFg(preset.defaultFg);
-      setBg(preset.defaultBg);
+  const applyPreset = (presetIndex: number) => {
+    const preset = qrPresets[presetIndex];
+    if (!preset) {
+      return;
     }
+
+    setText(preset.template);
+    setFg(preset.defaultFg);
+    setBg(preset.defaultBg);
   };
 
   const url = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(
@@ -746,13 +773,13 @@ function QrGeneratorDemo() {
       <p className="mt-2 text-sm text-gray-300">Customize content, size, and colors to generate a QR code instantly.</p>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        {Object.entries(qrPresets).map(([key, preset]) => (
+        {qrPresets.map((preset, index) => (
           <button
-            key={key}
-            onClick={() => applyPreset(key)}
+            key={preset.name}
+            onClick={() => applyPreset(index)}
             className="rounded-lg border border-white/20 bg-black/40 px-3 py-2 text-xs text-gray-300 transition hover:bg-white/10 hover:text-white"
           >
-            {preset.category}
+            {preset.name}
           </button>
         ))}
       </div>
