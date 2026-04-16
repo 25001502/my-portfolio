@@ -18,7 +18,7 @@ export default function Header() {
               <a>Content</a>
               <ul className="p-2 ">
                 <li><Link href="/projects" className="rounded-xl">Projects</Link></li>
-                <li><a className="rounded-xl">Demos</a></li>
+                <li><Link href="/demos" className="rounded-xl">Demos</Link></li>
               </ul>
             </li>
             <li><a href="#contact" className="rounded-xl">Contact</a></li>
@@ -34,7 +34,7 @@ export default function Header() {
               <summary className="cursor-none rounded-xl">Content</summary>
               <ul className="p-2 bg-black rounded-xl border border-white/10 w-40 z-1">
                 <li><Link href="/projects" className="cursor-none rounded-xl">Projects</Link></li>
-                <li><a className="cursor-none rounded-xl">Demos</a></li>
+                <li><Link href="/demos" className="cursor-none rounded-xl">Demos</Link></li>
               </ul>
             </details>
           </li>
