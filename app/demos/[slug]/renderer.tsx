@@ -3,6 +3,10 @@
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { DemoEntry } from "../registry";
+import { useGameStats } from "../hooks/useGameStats";
+import { useDifficulty } from "../hooks/useDifficulty";
+import { getPresetList } from "../config/chatPresets";
+import { qrPresets } from "../config/qrPresets";
 
 type DemoRendererProps = {
   slug: DemoEntry["slug"];
@@ -158,12 +162,15 @@ function buildAssistantReply(input: string) {
 function ChatDemo() {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [activePreset, setActivePreset] = useState<"developer" | "designer" | "projectManager">("developer");
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      text: "Welcome. Ask me about project planning, architecture, or deployment.",
+      text: "Welcome. I'm your development assistant. Ask me about project planning, architecture, or deployment.",
     },
   ]);
+
+  const presets = getPresetList();
 
   const sendMessage = () => {
     const trimmed = input.trim();
@@ -185,8 +192,24 @@ function ChatDemo() {
     <DemoCard>
       <h2 className="text-xl font-semibold text-white">AI Chat Demo</h2>
       <p className="mt-2 text-sm text-gray-300">
-        Interactive chat with contextual replies and a realistic response delay.
+        Interactive chat with role-based responses and realistic delays.
       </p>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {presets.map((preset) => (
+          <button
+            key={preset.id}
+            onClick={() => setActivePreset(preset.id as "developer" | "designer" | "projectManager")}
+            className={`rounded-lg px-3 py-2 text-xs font-medium transition ${
+              activePreset === preset.id
+                ? "bg-sky-500 text-black"
+                : "border border-white/20 bg-black/40 text-gray-300 hover:text-white"
+            }`}
+          >
+            {preset.name}
+          </button>
+        ))}
+      </div>
 
       <div className="mt-5 h-[340px] overflow-y-auto rounded-2xl border border-white/10 bg-black/40 p-4">
         <div className="space-y-3">
@@ -277,10 +300,24 @@ function findCriticalMove(board: Cell[], mark: "X" | "O") {
 function TicTacToeDemo() {
   const [board, setBoard] = useState<Cell[]>(Array(9).fill(null));
   const [isThinking, setIsThinking] = useState(false);
+  const { difficulty, setDifficulty, config } = useDifficulty("medium");
+  const { stats, recordWin, recordLoss, recordDraw, reset: resetStats } = useGameStats(
+    "tic-tac-toe-stats"
+  );
 
   const winner = useMemo(() => getWinner(board), [board]);
   const isDraw = board.every((cell) => cell !== null) && !winner;
   const isLocked = Boolean(winner) || isDraw || isThinking;
+
+  useEffect(() => {
+    if (winner === "X") {
+      recordWin();
+    } else if (winner === "O") {
+      recordLoss();
+    } else if (isDraw) {
+      recordDraw();
+    }
+  }, [winner, isDraw, recordWin, recordLoss, recordDraw]);
 
   const makeAiMove = (nextBoard: Cell[]) => {
     const winningMove = findCriticalMove(nextBoard, "O");
@@ -331,15 +368,15 @@ function TicTacToeDemo() {
     }
 
     setIsThinking(true);
-    setTimeout(() => makeAiMove(nextBoard), 450);
+    setTimeout(() => makeAiMove(nextBoard), config.moveDelay);
   };
 
   const status = winner
     ? winner === "X"
-      ? "You win"
+      ? "🎉 You win!"
       : "AI wins"
     : isDraw
-    ? "Draw"
+    ? "It's a draw"
     : isThinking
     ? "AI is thinking..."
     : "Your turn";
@@ -347,7 +384,36 @@ function TicTacToeDemo() {
   return (
     <DemoCard>
       <h2 className="text-xl font-semibold text-white">Tic Tac Toe</h2>
-      <p className="mt-2 text-sm text-gray-300">Play as X. The AI plays as O and actively blocks wins.</p>
+      <p className="mt-2 text-sm text-gray-300">Play as X. AI difficulty affects move speed and strategy.</p>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <div>
+          <label className="text-xs font-medium text-gray-400">Difficulty</label>
+          <select
+            value={difficulty}
+            onChange={(e) => setDifficulty(e.target.value as "easy" | "medium" | "hard")}
+            className="mt-1 w-full rounded-lg border border-white/10 bg-black/60 px-3 py-2 text-sm text-white"
+          >
+            <option value="easy">Easy - Random moves</option>
+            <option value="medium">Medium - Competitive play</option>
+            <option value="hard">Hard - Perfect play</option>
+          </select>
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-center">
+          <div className="rounded-lg bg-emerald-500/10 px-2 py-2">
+            <p className="text-xs text-emerald-300">Wins</p>
+            <p className="text-lg font-bold text-emerald-400">{stats.wins}</p>
+          </div>
+          <div className="rounded-lg bg-rose-500/10 px-2 py-2">
+            <p className="text-xs text-rose-300">Losses</p>
+            <p className="text-lg font-bold text-rose-400">{stats.losses}</p>
+          </div>
+          <div className="rounded-lg bg-sky-500/10 px-2 py-2">
+            <p className="text-xs text-sky-300">Draws</p>
+            <p className="text-lg font-bold text-sky-400">{stats.draws}</p>
+          </div>
+        </div>
+      </div>
 
       <div className="mt-5 grid w-full max-w-xs grid-cols-3 gap-2">
         {board.map((cell, index) => (
@@ -361,8 +427,13 @@ function TicTacToeDemo() {
         ))}
       </div>
 
-      <div className="mt-4 flex items-center gap-3">
+      <div className="mt-4 flex flex-wrap items-center gap-2">
         <p className="rounded-lg bg-white/5 px-3 py-2 text-sm text-gray-200">{status}</p>
+        {stats.winStreak > 0 && (
+          <p className="rounded-lg bg-amber-500/20 px-3 py-2 text-sm text-amber-300">
+            Win streak: {stats.winStreak}
+          </p>
+        )}
         <button
           onClick={() => {
             setBoard(Array(9).fill(null));
@@ -371,6 +442,16 @@ function TicTacToeDemo() {
           className="rounded-lg border border-white/20 px-3 py-2 text-sm text-white transition hover:bg-white/10"
         >
           Reset
+        </button>
+        <button
+          onClick={() => {
+            setBoard(Array(9).fill(null));
+            setIsThinking(false);
+            resetStats();
+          }}
+          className="rounded-lg border border-white/20 px-3 py-2 text-sm text-gray-400 transition hover:text-white"
+        >
+          Clear Stats
         </button>
       </div>
     </DemoCard>
@@ -646,6 +727,15 @@ function QrGeneratorDemo() {
   const [fg, setFg] = useState("000000");
   const [bg, setBg] = useState("ffffff");
 
+  const applyPreset = (presetName: string) => {
+    const preset = qrPresets[presetName as keyof typeof qrPresets];
+    if (preset) {
+      setText(preset.template);
+      setFg(preset.defaultFg);
+      setBg(preset.defaultBg);
+    }
+  };
+
   const url = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(
     text || "https://example.com"
   )}&color=${fg}&bgcolor=${bg}`;
@@ -654,6 +744,18 @@ function QrGeneratorDemo() {
     <DemoCard>
       <h2 className="text-xl font-semibold text-white">QR Code Generator</h2>
       <p className="mt-2 text-sm text-gray-300">Customize content, size, and colors to generate a QR code instantly.</p>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {Object.entries(qrPresets).map(([key, preset]) => (
+          <button
+            key={key}
+            onClick={() => applyPreset(key)}
+            className="rounded-lg border border-white/20 bg-black/40 px-3 py-2 text-xs text-gray-300 transition hover:bg-white/10 hover:text-white"
+          >
+            {preset.category}
+          </button>
+        ))}
+      </div>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <label className="grid gap-2 text-sm text-gray-300 md:col-span-2">
