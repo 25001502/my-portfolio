@@ -16,22 +16,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme="black" lang="en" className="">
+    <html data-theme="black" lang="en">
       <head>
         <meta
           name="google-adsense-account"
           content="ca-pub-3715807718346094"
         />
-        <Script
-          id="adsense-init"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3715807718346094"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
       </head>
       <body>
         {children}
+        <Script
+          id="adsense-init"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3715807718346094"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
