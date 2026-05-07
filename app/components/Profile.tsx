@@ -201,7 +201,7 @@ export default function Profile() {
               </a>
 
               <Image
-                src="https://ghchart.rshah.org/7c3aed/25001502"
+                 src="https://ghchart.rshah.org/ff3154/25001502"
                 alt="GitHub Contribution Graph"
                 width={720}
                 height={100}
