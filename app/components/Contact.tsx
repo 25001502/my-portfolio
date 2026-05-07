@@ -9,7 +9,7 @@ const Contact = () => {
       className="min-h-screen py-20 bg-[radial-gradient(circle_at_top_left,#ffffff08_30%,transparent_31%),radial-gradient(circle_at_bottom_right,#ffffff08_30%,transparent_31%)] bg-size-[6em_6em]"
     >
       <div className="text-center mb-12 justify-center1">
-        <p className="  text-sm font-medium mb-2 text-indigo-600">Contact Me</p>
+        <p className="  text-sm font-medium mb-2 text-[#FF3154]">Contact Me</p>
         <h2 className="text-2xl font-bold text-white">Get In Touch</h2>
         <p className="text-gray-500">
           Feel free to reach out to me for any inquiries or opportunities.

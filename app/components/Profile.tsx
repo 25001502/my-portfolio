@@ -42,9 +42,9 @@ export default function Profile() {
           border-radius: 9999px;
           pointer-events: none;
           z-index: 9999;
-          background: rgba(99, 102, 241, 0.9);
-          box-shadow: 0 0 10px rgba(99, 102, 241, 0.9),
-            0 0 20px rgba(99, 102, 241, 0.7), 0 0 40px rgba(99, 102, 241, 0.5);
+          background: rgba(255, 49, 84, 0.9);
+          box-shadow: 0 0 10px rgba(255, 49, 84, 0.9),
+            0 0 20px rgba(255, 49, 84, 0.7), 0 0 40px rgba(255, 49, 84, 0.5);
           transform: translate(-50%, -50%);
           transition: transform 0.05s linear;
         }
@@ -112,7 +112,7 @@ export default function Profile() {
         .typing {
           overflow: hidden;
           white-space: nowrap;
-          border-right: 3px solid #8b5cf6;
+          border-right: 3px solid #FF3154;
           width: 0;
           animation: typing 2.2s steps(12, end) forwards,
             blink 0.8s step-end infinite;
@@ -125,7 +125,7 @@ export default function Profile() {
           {/* LEFT COLUMN */}
           <div className="flex-1 text-center md:text-left animate-left">
             <div className="avatar flex justify-center md:justify-start mb-6 animate-fade-up relative">
-              <div className="ring-primary ring-offset-indigo-500 rounded-full ring-2 w-35 ring-offset-2">
+              <div className="ring-primary ring-offset-[#FF3154] rounded-full ring-2 w-35 ring-offset-2">
                 <Image
                   src="https://firebasestorage.googleapis.com/v0/b/my-univen-project.firebasestorage.app/o/gemini-2.5-flash-image_make_me_look_profetional_for_a_portfolio_profile_picture_and_make_the_suit_black-0.jpg?alt=media&token=7a85f9f2-d8cc-47f1-be49-7684677b2522"
                   alt="Thandululo Nengovhela profile picture"
@@ -137,7 +137,7 @@ export default function Profile() {
 
               {/* Right-side vertical stack */}
               <div className="flex flex-col items-center ml-6 ">
-                <span className="btn btn-dash btn-sm text-indigo-500 rounded-full rotate-[0] mb-2 cursor-none ">
+                <span className="btn btn-dash btn-sm text-[#FF3154] rounded-full rotate-[0] mb-2 cursor-none ">
                   Available for work
                 </span>
 
@@ -156,7 +156,7 @@ export default function Profile() {
               Nengovhela
             </h2>
 
-            <p className="mt-4 text-xl md:text-2xl font-bold text-violet-600  ">
+            <p className="mt-4 text-xl md:text-2xl font-bold text-[#FF3154]  ">
               Full Stack Developer
             </p>
 
@@ -166,19 +166,19 @@ export default function Profile() {
 
             <span className="max-w-xs text-sm  md:gap-4 lg:gap-6 grid-cols-5 ">
               <ul>
-                <li className=" btn btn-sm border-b-indigo-500 cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                <li className=" btn btn-sm border-b-[#FF3154] cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                   React.Js
                 </li>
-                <li className=" btn btn-sm border-b-indigo-500 cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                <li className=" btn btn-sm border-b-[#FF3154] cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                   Next.Js
                 </li>
-                <li className=" btn btn-sm border-b-indigo-500 cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                <li className=" btn btn-sm border-b-[#FF3154] cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                   Figma
                 </li>
-                <li className=" btn btn-sm border-b-indigo-500 cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                <li className=" btn btn-sm border-b-[#FF3154] cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                   JAVA
                 </li>
-                <li className=" btn btn-sm border-b-indigo-500 cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ">
+                <li className=" btn btn-sm border-b-[#FF3154] cursor-none mr-1 text-white rounded-xl mt-6 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 ">
                   Firebase
                 </li>
               </ul>
@@ -212,22 +212,22 @@ export default function Profile() {
 
             <div className="flex-1 w-full max-w-xl grid grid-cols-3 gap-4 mt-6 animate-fade-up">
               <div className="p-4 rounded-xl border border-border bg-card/30 text-center">
-                <p className="text-2xl font-bold text-violet-600">4+</p>
+                <p className="text-2xl font-bold text-[#FF3154]">4+</p>
                 <p className="text-xs text-muted-foreground">Years Exp</p>
               </div>
 
               <div className="p-4 rounded-xl border border-border bg-card/30 text-center">
-                <p className="text-2xl font-bold text-violet-600">10+</p>
+                <p className="text-2xl font-bold text-[#FF3154]">10+</p>
                 <p className="text-xs text-muted-foreground">Projects</p>
               </div>
 
               <div className="p-4 rounded-xl border border-border bg-card/30 text-center ">
-                <p className="text-2xl font-bold text-violet-600">1</p>
+                <p className="text-2xl font-bold text-[#FF3154]">1</p>
                 <p className="text-xs text-muted-foreground">Company</p>
               </div>
             </div>
 
-            <a className="hover-3d cursor-none rounded-xl border-indigo-600  flex-1 w-full max-w-xl  mt-6 animate-fade-up border border-border">
+            <a className="hover-3d cursor-none rounded-xl border-[#FF3154]  flex-1 w-full max-w-xl  mt-6 animate-fade-up border border-border">
               {/* content */}
               <div className="card rounded-xl  border-white bg-black text-white bg-[radial-gradient(circle_at_bottom_left,#ffffff04_35%,transparent_36%),radial-gradient(circle_at_top_right,#ffffff04_35%,transparent_36%)] bg-size-[4.95em_4.95em]">
                 <div className="card-body ">

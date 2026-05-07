@@ -104,7 +104,7 @@ const Body = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-14">
           {/* LEFT COLUMN */}
           <div className="flex-1 text-center md:text-left animate-left">
-            <p className="text-indigo-600 text-sm font-medium mb-2 ">
+            <p className="text-[#FF3154] text-sm font-medium mb-2 ">
               About Me
             </p>
 
@@ -141,7 +141,7 @@ const Body = () => {
               </p>
 
               <div className="mt-8 space-y-4">
-                <h3 className="text-xl font-bold text-indigo-600">Experience</h3>
+                <h3 className="text-xl font-bold text-[#FF3154]">Experience</h3>
                 <div className="flex gap-4 text-sm">
                   <div className="w-2 h-2 rounded-full bg-green-500 text-red mt-2 shrink-0 animate-pulse"></div>
                   <div>

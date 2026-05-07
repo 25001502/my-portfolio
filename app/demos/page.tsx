@@ -77,7 +77,7 @@ export default function DemosPage() {
       className="relative isolate min-h-screen overflow-hidden bg-[#060913] py-12 sm:py-16"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-80 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size-[56px_56px]" />
-      <div className="pointer-events-none absolute -left-40 top-1/4 -z-10 h-[480px] w-[480px] rounded-full bg-indigo-600/20 blur-[140px]" />
+      <div className="pointer-events-none absolute -left-40 top-1/4 -z-10 h-[480px] w-[480px] rounded-full bg-[#FF3154]/20 blur-[140px]" />
       <div className="pointer-events-none absolute -right-40 bottom-0 -z-10 h-[460px] w-[460px] rounded-full bg-fuchsia-600/20 blur-[140px]" />
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">

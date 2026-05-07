@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 md:px-12">
         <div className="mb-8 flex flex-col items-start gap-4 sm:mb-10 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="mb-2 text-xs font-medium text-indigo-600 sm:text-sm">Projects</p>
+            <p className="mb-2 text-xs font-medium text-[#FF3154] sm:text-sm">Projects</p>
             <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
               Live Websites
             </h1>
