@@ -22,9 +22,9 @@ const Contact = () => {
 
           <div className="flex-1 text-center md:text-left animate-left ">
             <div className="lg:col-span-2 space-y-4 ">
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-red-900 bg-card/50 w-95">
                 {" "}
-                <i className="fa-solid fa-envelope text-xl text-indigo-500"></i>{" "}
+                <i className="fa-solid fa-envelope text-xl text-[#FF3154]"></i>{" "}
                 <div className="">
                   <p className=" text-gray-500 text-xs ">Email</p>
                   <a
@@ -37,9 +37,9 @@ const Contact = () => {
               </div>
 
 
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-red-900 bg-card/50 w-95">
                 {" "}
-                <i className="fa-brands fa-linkedin text-xl text-indigo-500"></i>{" "}
+                <i className="fa-brands fa-linkedin text-xl text-[#FF3154]"></i>{" "}
                 <div className="">
                   <p className=" text-gray-500 text-xs ">LinkedIn</p>
                   <a
@@ -52,9 +52,9 @@ const Contact = () => {
               </div>
 
 
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-red-900 bg-card/50 w-95">
                 {" "}
-                <i className="fa-brands fa-github text-xl text-indigo-500"></i>{" "}
+                <i className="fa-brands fa-github text-xl text-[#FF3154]"></i>{" "}
                 <div className="">
                   <p className=" text-gray-500 text-xs ">GitHub</p>
                   <a
@@ -66,9 +66,9 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-red-900 bg-card/50 w-95">
                 {" "}
-                <i className="fa-solid fa-phone text-xl text-indigo-500"></i>{" "}
+                <i className="fa-solid fa-phone text-xl text-[#FF3154]"></i>{" "}
                 <div>
                   <p className=" text-gray-500 text-xs ">Phone</p>
                   <a
@@ -80,9 +80,9 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-gray-800 bg-card/50 w-95">
+              <div className="flex items-center gap-4 p-4 rounded-xl border border-border border-red-900 bg-card/50 w-95">
                 {" "}
-                <i className="fa-solid fa-location-dot text-xl text-indigo-500"></i>{" "}
+                <i className="fa-solid fa-location-dot text-xl text-[#FF3154]"></i>{" "}
                 <div>
                   <p className=" text-gray-500 text-xs ">Location</p>
                   <p className="text-white font-medium">Available worldwide</p>
@@ -94,7 +94,7 @@ const Contact = () => {
           {/*right section*/}
           <div className="flex-1 w-full max-w-xl animate-right">
             <section className="w-full flex justify-center px-4">
-              <div className="w-full max-w-2xl rounded-2xl border border-white/10  from-white/5 to-transparent p-6 md:p-4 shadow-xl ">
+              <div className="w-full max-w-2xl rounded-2xl border border-[#FF3154]  from-white/5 to-transparent p-6 md:p-4 shadow-xl ">
                 {/* Grid for Name & Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -104,7 +104,7 @@ const Contact = () => {
                     <input
                       type="text"
                       placeholder="Your name"
-                      className="w-full rounded-xl bg-black/60 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+                      className="w-full rounded-xl bg-black/60 border border-red-900 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
                     />
                   </div>
 
@@ -115,7 +115,7 @@ const Contact = () => {
                     <input
                       type="email"
                       placeholder="you@example.com"
-                      className="w-full rounded-xl bg-black/60 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+                      className="w-full rounded-xl bg-black/60 border border-red-900 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
                     />
                   </div>
                 </div>
@@ -129,7 +129,7 @@ const Contact = () => {
                   <input
                     type="tel"
                     placeholder="+27 81 234 5678"
-                    className="w-full rounded-xl bg-black/60 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    className="w-full rounded-xl bg-black/60 border border-red-900 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
                   />
                 </div>
 
@@ -141,14 +141,14 @@ const Contact = () => {
                   <textarea
                     rows={4}
                     placeholder="Tell me about your project..."
-                    className="w-full resize-none rounded-xl bg-black/60 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+                    className="w-full resize-none rounded-xl bg-black/60 border border-red-900 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
                   />
                 </div>
 
                 {/* Button */}
                 <button
                   type="submit"
-                  className="mt-8 w-full flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+                  className="mt-8 w-full flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-red-400 transition hover:bg-white/90"
                 >
                   Send Message
                   <i className="fa-solid fa-paper-plane"></i>

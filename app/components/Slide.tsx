@@ -92,7 +92,7 @@ const Slide = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#ffffff08_30%,transparent_31%),radial-gradient(circle_at_bottom_right,#ffffff08_30%,transparent_31%)] bg-size-[6em_6em]" />
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">
-        <p className="mb-2 text-sm text-indigo-500 font-medium">Technologies</p>
+        <p className="mb-2 text-sm text-[#FF3154] font-medium">Technologies</p>
         <h2 className="mb-12 text-4xl font-bold text-white">
           Tech Stack
         </h2>
