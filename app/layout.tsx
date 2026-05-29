@@ -5,9 +5,24 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Thandululo Nengovhela - Full Stack Developer",
+  title: "Thandululo Nengovhela - Full Stack Developer | Portfolio",
   description:
-    "Full Stack Developer specializing in React, Next.js, React + Vite,",
+    "Full Stack Developer specializing in React, Next.js, React + Vite, TypeScript, Firebase. View my interactive projects and demos.",
+  keywords: ["Thandululo Nengovhela", "Full Stack Developer", "React", "Next.js", "TypeScript", "Firebase", "Portfolio"],
+  authors: [{ name: "Thandululo Nengovhela" }],
+  creator: "Thandululo Nengovhela",
+  publisher: "Thandululo Nengovhela",
+  metadataBase: new URL("https://nengovhela.me"),
+  verification: {
+    google: "AkasQuCC23SSq1WgizXpgoa97INNcuCaJDC3P_tv3vo",
+  },
+  openGraph: {
+    title: "Thandululo Nengovhela - Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in React, Next.js, React + Vite, TypeScript, Firebase. View my interactive projects and demos.",
+    url: "https://nengovhela.me",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
