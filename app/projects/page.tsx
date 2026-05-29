@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Projects | Thandululo Nengovhela",
+  description:
+    "Live website projects by Thandululo Nengovhela, including Gradiate and APS Calculator.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects | Thandululo Nengovhela",
+    description:
+      "Live website projects by Thandululo Nengovhela, including Gradiate and APS Calculator.",
+    url: "/projects",
+  },
+};
 
 export default function ProjectsPage() {
   return (

@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   creator: "Thandululo Nengovhela",
   publisher: "Thandululo Nengovhela",
   metadataBase: new URL("https://nengovhela.me"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   verification: {
     google: "AkasQuCC23SSq1WgizXpgoa97INNcuCaJDC3P_tv3vo",
   },
@@ -21,7 +32,15 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer specializing in React, Next.js, React + Vite, TypeScript, Firebase. View my interactive projects and demos.",
     url: "https://nengovhela.me",
+    siteName: "Thandululo Nengovhela Portfolio",
+    locale: "en_ZA",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Thandululo Nengovhela - Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in React, Next.js, React + Vite, TypeScript, Firebase. View my interactive projects and demos.",
   },
 };
 

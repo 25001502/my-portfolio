@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import type { IconType } from "react-icons";
 import {
@@ -11,6 +12,21 @@ import {
 } from "react-icons/fi";
 import { HiSparkles } from "react-icons/hi2";
 import { demos as demoRegistry } from "./registry";
+
+export const metadata: Metadata = {
+  title: "Interactive Demos | Thandululo Nengovhela",
+  description:
+    "Interactive frontend, AI, canvas, audio, and browser experience demos built by Thandululo Nengovhela.",
+  alternates: {
+    canonical: "/demos",
+  },
+  openGraph: {
+    title: "Interactive Demos | Thandululo Nengovhela",
+    description:
+      "Interactive frontend, AI, canvas, audio, and browser experience demos built by Thandululo Nengovhela.",
+    url: "/demos",
+  },
+};
 
 type DemoItem = {
   slug: string;

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { demos, getDemoBySlug } from "../registry";
@@ -9,6 +10,30 @@ type DemoPageProps = {
 
 export function generateStaticParams() {
   return demos.map((demo) => ({ slug: demo.slug }));
+}
+
+export async function generateMetadata({ params }: DemoPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const demo = getDemoBySlug(slug);
+
+  if (!demo) {
+    return {
+      title: "Demo Not Found | Thandululo Nengovhela",
+    };
+  }
+
+  return {
+    title: `${demo.title} | Thandululo Nengovhela`,
+    description: demo.description,
+    alternates: {
+      canonical: `/demos/${demo.slug}`,
+    },
+    openGraph: {
+      title: `${demo.title} | Thandululo Nengovhela`,
+      description: demo.description,
+      url: `/demos/${demo.slug}`,
+    },
+  };
 }
 
 export default async function DemoPage({ params }: DemoPageProps) {
