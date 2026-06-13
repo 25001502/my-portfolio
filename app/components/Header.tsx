@@ -42,7 +42,9 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-sm rounded-xl cursor-none">Let&apos;s Talk</a>
+        <a className="btn btn-sm rounded-xl cursor-none" href="https://wa.me/0665509434" target="_blank" rel="noopener noreferrer">
+          Let&apos;s Talk
+        </a>
       </div>
     </div>
     
